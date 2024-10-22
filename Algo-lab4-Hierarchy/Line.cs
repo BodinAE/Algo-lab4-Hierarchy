@@ -23,6 +23,8 @@ namespace Algo_lab4_Hierarchy
 
         public Line(string name, Point start, Point end)
         {
+            Pos1 = new Point(start.x, start.y);
+            Pos2 = new Point(end.x, end.y);
             this.Name = name;
             MiddlePos = new Point((start.x + end.x) / 2, (start.y + end.y) / 2);
             Length = Convert.ToDecimal(Math.Sqrt(Decimal.ToDouble(((end.x - start.x) * (end.x - start.x)) + ((end.y - start.y) * (end.y - start.y)))));
@@ -31,8 +33,8 @@ namespace Algo_lab4_Hierarchy
         public void Print() 
         {
             Console.WriteLine($"Line:\t{Name}");
-            MiddlePos.Print();
-            Console.WriteLine($"Starting point:\t{Pos1}\nEnding point:\t{Pos2}\nLength:\t{Length}");
+            MiddlePos.Print();            
+            Console.WriteLine($"Starting point:\t{Pos1}\nEnding point:\t{Pos2}\nLength:\t{Length}\n");
             
         }
         public override string ToString()

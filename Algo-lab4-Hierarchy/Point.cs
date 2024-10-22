@@ -23,7 +23,7 @@ namespace Algo_lab4_Hierarchy
 
         public void Print()
         {
-            Console.WriteLine($"x:\t{x}\ny:\t{y}\n");
+            Console.WriteLine($"x:\t{x}\ny:\t{y}");
         }
     }
 }

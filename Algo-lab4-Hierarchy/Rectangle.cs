@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algo_lab4_Hierarchy
 {
-    internal class Square : Shape
+    internal class Rectangle : Shape
     {
         public Point Pos1 { get; set; }
         public Point Pos2 { get; set; }
@@ -16,9 +16,8 @@ namespace Algo_lab4_Hierarchy
         public Line Line2 { get; set; }
         public Line Line3 { get; set; }
         public Line Line4 { get; set; }
-
         public decimal Area { get; set; }
-        public Square(string name = "Square", decimal x1 = 0, decimal y1 = 0, decimal x2 = 0, decimal y2 = 0)
+        public Rectangle(string name = "Square", decimal x1 = 0, decimal y1 = 0, decimal x2 = 0, decimal y2 = 0)
         {
             Name = name;
             Pos1 = new Point(x1, y1);
@@ -31,6 +30,21 @@ namespace Algo_lab4_Hierarchy
             Line4 = new Line($"{name}_L4", Pos4, Pos1);
             MiddlePos = new Point((x1 + x2) / 2, (y1 + y2) / 2);
             Area = Line1.Length * Line2.Length;
+        }
+        public void Print()
+        {
+            Console.WriteLine($"Square:\t{Name}");
+            MiddlePos.Print();
+            Line1.Print();
+            Line2.Print();
+            Line3.Print();
+            Line4.Print();
+            Console.WriteLine($"Area:\t{Area}");
+            //Console.WriteLine($"Point A:\t{Pos1}\nPoint B:\t{Pos2}\nPoint C:\t{Pos3}\nPoint D:\t{Pos4}\nArea:\t{Area}");
+        }
+        public override string ToString()
+        {
+            return $"Square: {Name}\tPoint A: {Pos1}\tPoint C: {Pos3}";
         }
     }
 }
