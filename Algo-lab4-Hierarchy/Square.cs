@@ -9,28 +9,28 @@ namespace Algo_lab4_Hierarchy
 {
     internal class Square : Rectangle
     {
-        decimal a { get; set; }
-        public Square(string name, Point pos, decimal a)
+        decimal a { get; set; }                                     //Length of a side
+        public Square(string name, decimal middlex, decimal middley, decimal a)
         {
             this.a = a;
-            var x1 = pos.x;
-            var y1 = pos.y;
-            var x2 = pos.x + a;
-            var y2 = pos.y + a;
+            var x1 = middlex - (a / 2);
+            var y1 = middley - (a / 2);
+            var x2 = middlex + (a / 2);
+            var y2 = middley + (a / 2);
             Name = name;
             Pos1 = new Point(x1, y1);
             Pos2 = new Point(x1, y2);
             Pos3 = new Point(x2, y2);
-            Pos4 = new Point(x2, y2);
+            Pos4 = new Point(x2, y1);
             Line1 = new Line($"{name}_L1", Pos1, Pos2);
             Line2 = new Line($"{name}_L2", Pos2, Pos3);
             Line3 = new Line($"{name}_L3", Pos3, Pos4);
             Line4 = new Line($"{name}_L4", Pos4, Pos1);
-            MiddlePos = new Point((x1 + x2) / 2, (y1 + y2) / 2);
+            MiddlePos = new Point(middlex, middley);
             Area = a * a;
         }
 
-        public void Print()
+        public override void Print()
         {
             Console.WriteLine($"Square:\t{Name}");
             MiddlePos.Print();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Algo_lab4_Hierarchy
 {
-    internal class Shape 
+    internal abstract class Shape 
     { 
         public string Name { get; set; }
         public Point MiddlePos {  get; set; }
@@ -19,10 +19,6 @@ namespace Algo_lab4_Hierarchy
         {
             return $"Shape: {Name}\t{MiddlePos}";
         }
-        public void Print() 
-        {
-            Console.WriteLine($"Shape:\t{Name}");
-            MiddlePos.Print();
-        }
+        public abstract void Print();
     }
 }

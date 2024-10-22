@@ -8,6 +8,7 @@ namespace Algo_lab4_Hierarchy
 {
     internal class Point
     {
+        public string Name {  get; set; }
         public decimal x {  get; set; }
         public decimal y { get; set; }
         public override string ToString()
@@ -21,7 +22,7 @@ namespace Algo_lab4_Hierarchy
             this.y = y;
         }
 
-        public void Print()
+        public virtual void Print()
         {
             Console.WriteLine($"x:\t{x}\ny:\t{y}");
         }

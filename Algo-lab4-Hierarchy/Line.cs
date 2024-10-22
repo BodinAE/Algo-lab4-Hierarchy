@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace Algo_lab4_Hierarchy
 {
-    internal class Line : Shape
+    internal class Line
     {
         public Point Pos1 {  get; set; }
         public Point Pos2 { get; set; }
         public decimal Length { get; set; }
+        public Point MiddlePos { get; set; }
+        public string Name { get; set; }
         
         public Line(string name = "Line", decimal x1 = 0, decimal y1 = 0, decimal x2 = 0, decimal y2 = 0) 
         { 
