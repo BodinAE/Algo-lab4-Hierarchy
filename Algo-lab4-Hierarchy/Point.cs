@@ -22,6 +22,11 @@ namespace Algo_lab4_Hierarchy
             this.y = y;
         }
 
+        public decimal GetSize()
+        {
+            return 0;
+        }
+
         public virtual void Print()
         {
             Console.WriteLine($"x:\t{x}\ny:\t{y}");

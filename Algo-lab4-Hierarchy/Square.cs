@@ -18,10 +18,10 @@ namespace Algo_lab4_Hierarchy
             var x2 = middlex + (a / 2);
             var y2 = middley + (a / 2);
             Name = name;
-            Pos1 = new Point(x1, y1);
-            Pos2 = new Point(x1, y2);
-            Pos3 = new Point(x2, y2);
-            Pos4 = new Point(x2, y1);
+            var Pos1 = new Point(x1, y1);
+            var Pos2 = new Point(x1, y2);
+            var Pos3 = new Point(x2, y2);
+            var Pos4 = new Point(x2, y1);
             Line1 = new Line($"{name}_L1", Pos1, Pos2);
             Line2 = new Line($"{name}_L2", Pos2, Pos3);
             Line3 = new Line($"{name}_L3", Pos3, Pos4);
@@ -30,7 +30,7 @@ namespace Algo_lab4_Hierarchy
             Area = a * a;
         }
 
-        public override void Print()
+        public void Print()
         {
             Console.WriteLine($"Square:\t{Name}");
             MiddlePos.Print();
@@ -40,7 +40,10 @@ namespace Algo_lab4_Hierarchy
             Line4.Print();
             Console.WriteLine($"Area:\t{Area}");
         }
-
+        public decimal GetSize()
+        {
+            return Area;
+        }
         public override string ToString()
         {
             return $"Square: {Name}\tLength: {a}\tArea: {Area}";

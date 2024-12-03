@@ -13,6 +13,12 @@
             var lin2 = new Interval("Int1", 0, 0, 3, 4);
             lin.Print();
             lin2.Print();
+            var test = new Interval("inter", 0, 0, 1, 1);
+            Console.WriteLine(test.GetSize());
+            Point test2 = test;
+            Console.WriteLine(test2.GetSize());
+            var test3 = new Triangle("tri", 0, 0, 1, 0, 1, 1);
+            Console.WriteLine(test3.GetSize());
         }
     }
 }

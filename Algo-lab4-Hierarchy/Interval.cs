@@ -12,7 +12,7 @@ namespace Algo_lab4_Hierarchy
     {
         public decimal x2 {  get; set; }
         public decimal y2 { get; set; }
-        public decimal Length {  get; set; }
+        //public decimal Length {  get; set; }
         public Interval(string name = "Interval", decimal x1 = 0, decimal y1 = 0, decimal x2 = 0, decimal y2 = 0)
         {
             Name = name;
@@ -20,7 +20,12 @@ namespace Algo_lab4_Hierarchy
             this.y = y1;
             this.x2 = x2;
             this.y2 = y2;
-            Length = Convert.ToDecimal(Math.Sqrt(Decimal.ToDouble(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)))));
+            //Length = Convert.ToDecimal(Math.Sqrt(Decimal.ToDouble(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)))));
+        }
+
+        public decimal GetSize()
+        {
+            return Convert.ToDecimal(Math.Sqrt(Decimal.ToDouble(((x2 - x) * (x2 - x)) + ((y2 - y) * (y2 - y)))));
         }
 
         public override void Print()
@@ -29,7 +34,7 @@ namespace Algo_lab4_Hierarchy
         }
         public override string ToString()
         {
-            return $"Interval: {Name}\tLength: {Length}";
+            return $"Interval: {Name}";
         }
     }
 }

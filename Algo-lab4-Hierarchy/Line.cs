@@ -31,7 +31,10 @@ namespace Algo_lab4_Hierarchy
             MiddlePos = new Point((start.x + end.x) / 2, (start.y + end.y) / 2);
             Length = Convert.ToDecimal(Math.Sqrt(Decimal.ToDouble(((end.x - start.x) * (end.x - start.x)) + ((end.y - start.y) * (end.y - start.y)))));
         }
-
+        public decimal GetSize()
+        {
+            return Length;
+        }
         public void Print() 
         {
             Console.WriteLine($"Line:\t{Name}");
