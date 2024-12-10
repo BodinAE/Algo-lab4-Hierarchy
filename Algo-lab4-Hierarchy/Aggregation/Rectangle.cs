@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
-namespace Algo_lab4_Hierarchy
+namespace Algo_lab4_Hierarchy.Aggregation
 {
-    internal class Square : Rectangle
+    internal class Rectangle //agg
     {
-        decimal a { get; set; }                                     //Length of a side
-        public Square(string name, decimal middlex, decimal middley, decimal a)
+        public string Name { get; set; }
+        public Point MiddlePos { get; set; }
+        public Line Line1 { get; set; }
+        public Line Line2 { get; set; }
+        public Line Line3 { get; set; }
+        public Line Line4 { get; set; }
+        public decimal Area { get; set; }
+        public Rectangle(string name = "Rectangle", decimal x1 = 0, decimal y1 = 0, decimal x2 = 0, decimal y2 = 0)
         {
-            this.a = a;
-            var x1 = middlex - (a / 2);
-            var y1 = middley - (a / 2);
-            var x2 = middlex + (a / 2);
-            var y2 = middley + (a / 2);
             Name = name;
             var Pos1 = new Point(x1, y1);
             var Pos2 = new Point(x1, y2);
@@ -26,19 +26,20 @@ namespace Algo_lab4_Hierarchy
             Line2 = new Line($"{name}_L2", Pos2, Pos3);
             Line3 = new Line($"{name}_L3", Pos3, Pos4);
             Line4 = new Line($"{name}_L4", Pos4, Pos1);
-            MiddlePos = new Point(middlex, middley);
-            Area = a * a;
+            MiddlePos = new Point((x1 + x2) / 2, (y1 + y2) / 2);
+            Area = Line1.Length * Line2.Length;
         }
 
         public void Print()
         {
-            Console.WriteLine($"Square:\t{Name}");
+            Console.WriteLine($"Rectangle:\t{Name}");
             MiddlePos.Print();
             Line1.Print();
             Line2.Print();
             Line3.Print();
             Line4.Print();
             Console.WriteLine($"Area:\t{Area}");
+            //Console.WriteLine($"Point A:\t{Pos1}\nPoint B:\t{Pos2}\nPoint C:\t{Pos3}\nPoint D:\t{Pos4}\nArea:\t{Area}");
         }
         public decimal GetSize()
         {
@@ -46,7 +47,7 @@ namespace Algo_lab4_Hierarchy
         }
         public override string ToString()
         {
-            return $"Square: {Name}\tLength: {a}\tArea: {Area}";
+            return $"Rectangle: {Name}\tLine AB: {Line1}\tLine BC: {Line2}";
         }
     }
 }

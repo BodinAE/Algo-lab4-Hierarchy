@@ -8,8 +8,8 @@ namespace Algo_lab4_Hierarchy
 {
     internal class Point
     {
-        public string Name {  get; set; }
-        public decimal x {  get; set; }
+        public string Name { get; set; }
+        public decimal x { get; set; }
         public decimal y { get; set; }
         public override string ToString()
         {
@@ -22,7 +22,7 @@ namespace Algo_lab4_Hierarchy
             this.y = y;
         }
 
-        public decimal GetSize()
+        public virtual decimal GetSize()
         {
             return 0;
         }
